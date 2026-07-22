@@ -1,0 +1,214 @@
+[
+  {
+    "name": "user",
+    "fields": [
+      {
+        "name": "Name",
+        "type": "text",
+        "description": "Full name of the user or driver",
+        "options": null
+      },
+      {
+        "name": "Email",
+        "type": "text",
+        "description": "Email address for login",
+        "options": null
+      },
+      {
+        "name": "Phone",
+        "type": "text",
+        "description": "Phone number",
+        "options": null
+      },
+      {
+        "name": "Role",
+        "type": "text",
+        "description": "User type: Rider, Driver, or Admin",
+        "options": [
+          "Rider",
+          "Driver",
+          "Admin"
+        ]
+      },
+      {
+        "name": "Status",
+        "type": "text",
+        "description": "Current status",
+        "options": [
+          "Active",
+          "Online",
+          "Offline"
+        ]
+      },
+      {
+        "name": "VehicleType",
+        "type": "text",
+        "description": "Type of vehicle (Driver only)",
+        "options": [
+          "Sedan",
+          "SUV",
+          "Luxury"
+        ]
+      },
+      {
+        "name": "Rating",
+        "type": "number",
+        "description": "Average user rating",
+        "options": null
+      },
+      {
+        "name": "RatingCount",
+        "type": "number",
+        "description": "Number of ratings received",
+        "options": null
+      },
+      {
+        "name": "Avatar",
+        "type": "text",
+        "description": "Profile picture URL or Base64 string",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "ride",
+    "fields": [
+      {
+        "name": "RiderId",
+        "type": "text",
+        "description": "ID of the rider who booked",
+        "options": null
+      },
+      {
+        "name": "DriverId",
+        "type": "text",
+        "description": "ID of the assigned driver",
+        "options": null
+      },
+      {
+        "name": "Pickup",
+        "type": "text",
+        "description": "Pickup location",
+        "options": null
+      },
+      {
+        "name": "Dropoff",
+        "type": "text",
+        "description": "Dropoff location",
+        "options": null
+      },
+      {
+        "name": "Status",
+        "type": "text",
+        "description": "Current state of the ride",
+        "options": [
+          "request",
+          "accepted",
+          "en_route",
+          "completed",
+          "cancelled"
+        ]
+      },
+      {
+        "name": "Fare",
+        "type": "text",
+        "description": "Estimated or final fare",
+        "options": null
+      },
+      {
+        "name": "RiderRating",
+        "type": "number",
+        "description": "Rating given by driver to rider",
+        "options": null
+      },
+      {
+        "name": "DriverRating",
+        "type": "number",
+        "description": "Rating given by rider to driver",
+        "options": null
+      },
+      {
+        "name": "StartTime",
+        "type": "datetime",
+        "description": "When the ride actually started",
+        "options": null
+      },
+      {
+        "name": "EndTime",
+        "type": "datetime",
+        "description": "When the ride was completed",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "chat_message",
+    "fields": [
+      {
+        "name": "RideId",
+        "type": "text",
+        "description": "The ID of the ride this chat belongs to",
+        "options": null
+      },
+      {
+        "name": "SenderId",
+        "type": "text",
+        "description": "The ID of the user sending the message",
+        "options": null
+      },
+      {
+        "name": "Content",
+        "type": "text",
+        "description": "The message text",
+        "options": null
+      },
+      {
+        "name": "Timestamp",
+        "type": "datetime",
+        "description": "When the message was sent",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "support_message",
+    "fields": [
+      {
+        "name": "UserId",
+        "type": "text",
+        "description": "ID of the user requesting support",
+        "options": null
+      },
+      {
+        "name": "SenderId",
+        "type": "text",
+        "description": "ID of the sender (can be user or admin)",
+        "options": null
+      },
+      {
+        "name": "Content",
+        "type": "text",
+        "description": "Message content",
+        "options": null
+      },
+      {
+        "name": "Timestamp",
+        "type": "datetime",
+        "description": "Time message was sent",
+        "options": null
+      },
+      {
+        "name": "IsReadByAdmin",
+        "type": "bool",
+        "description": "Whether the admin has read this message",
+        "options": null
+      },
+      {
+        "name": "IsReadByUser",
+        "type": "bool",
+        "description": "Whether the user has read this message",
+        "options": null
+      }
+    ]
+  }
+]

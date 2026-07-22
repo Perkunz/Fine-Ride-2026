@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication - Fine-ride</title>
+    <meta name="description" content="Login or Sign up for Fine-ride.">
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #121212;
+            --accent-color: #ff0000;
+            --bg-color: #030303;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+            --border-color: #2a2a2a;
+        }
+    }
+
+    @layer base {
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .bg-white { background-color: var(--secondary-color) !important; }
+        .text-black, .text-gray-900, .text-gray-800 { color: var(--text-main) !important; }
+        .text-gray-500, .text-gray-600 { color: var(--text-muted) !important; }
+        .bg-gray-50, .bg-gray-100 { background-color: #1f1f1f !important; }
+        .bg-gray-200 { background-color: #2a2a2a !important; }
+        .border-gray-100, .border-gray-200, .border-gray-300 { border-color: var(--border-color) !important; }
+        .text-blue-600 { color: var(--accent-color) !important; }
+    }
+
+    @layer components {
+        .btn-black {
+            @apply bg-[var(--primary-color)] text-black px-4 py-4 rounded-full font-bold hover:bg-gray-200 transition-colors flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.1)];
+        }
+        .btn-outline {
+            @apply bg-transparent border-2 border-[#2a2a2a] text-white px-4 py-3 rounded-full font-bold hover:bg-[#1f1f1f] transition-colors flex items-center justify-center;
+        }
+        .input-field {
+            @apply w-full bg-[#1f1f1f] border-none rounded-full px-6 py-4 text-[var(--text-main)] focus:ring-2 focus:ring-[var(--primary-color)] focus:outline-none placeholder-[var(--text-muted)];
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" src="auth-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard - Fine-ride</title>
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --accent-color: #276ef1;
+            --success-color: #059669;
+            --bg-color: #f3f3f3;
+            --text-main: #000000;
+            --border-color: #e2e2e2;
+        }
+    }
+
+    @layer base {
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply bg-[var(--primary-color)] text-[var(--secondary-color)] px-4 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors;
+        }
+        .btn-success {
+            @apply bg-[var(--success-color)] text-[var(--secondary-color)] px-4 py-3 rounded-xl font-bold text-lg hover:bg-green-700 transition-colors shadow-lg;
+        }
+        .panel {
+            @apply bg-[var(--secondary-color)] rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.1)] overflow-hidden;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" src="utils/auth.js"></script>
+    <script type="text/babel" src="components/ChatWindow.js"></script>
+    <script type="text/babel" src="driver-components/DriverPanel.js"></script>
+    <script type="text/babel" src="driver-components/DriverEarnings.js"></script>
+    <script type="text/babel" src="driver-components/DriverVehicle.js"></script>
+    <script type="text/babel" src="driver-components/DriverSettings.js"></script>
+    <script type="text/babel" src="driver-app.js"></script>
+</body>
+</html>
