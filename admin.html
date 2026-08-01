@@ -1,92 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Fine-ride</title>
-    <meta name="description" content="Manage users, drivers, rides, and analytics for Fine-ride.">
-    
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fine-ride — Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
-
-    <style type="text/tailwindcss">
-    @layer theme {
-        :root {
-            --primary-color: #ffffff;
-            --secondary-color: #121212;
-            --accent-color: #ff0000;
-            --bg-color: #030303;
-            --text-main: #ffffff;
-            --text-muted: #aaaaaa;
-            --border-color: #2a2a2a;
-            --sidebar-width: 260px;
-        }
-    }
-
-    @layer base {
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .bg-white { background-color: var(--secondary-color) !important; }
-        .text-black, .text-gray-900, .text-gray-800 { color: var(--text-main) !important; }
-        .text-gray-500, .text-gray-600 { color: var(--text-muted) !important; }
-        .bg-gray-50, .bg-gray-100 { background-color: #1f1f1f !important; }
-        .bg-gray-200 { background-color: #2a2a2a !important; }
-        .border-gray-100, .border-gray-200, .border-gray-300 { border-color: var(--border-color) !important; }
-        .bg-blue-50 { background-color: rgba(255, 0, 0, 0.1) !important; }
-        .text-blue-600, .text-blue-700 { color: var(--accent-color) !important; }
-        .bg-blue-600 { background-color: var(--accent-color) !important; }
-    }
-
-    @layer components {
-        .admin-card {
-            @apply bg-[var(--secondary-color)] rounded-2xl border border-[var(--border-color)] shadow-lg;
-        }
-        .nav-item {
-            @apply flex items-center gap-3 px-4 py-3 rounded-full text-[var(--text-muted)] font-medium hover:bg-[#1f1f1f] hover:text-white transition-colors cursor-pointer;
-        }
-        .nav-item.active {
-            @apply bg-[rgba(255,0,0,0.1)] text-[var(--accent-color)] hover:bg-[rgba(255,0,0,0.15)];
-        }
-        .badge {
-            @apply px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
-        }
-        .badge-success {
-            @apply bg-[rgba(16,185,129,0.1)] text-[#10b981];
-        }
-        .badge-warning {
-            @apply bg-[rgba(245,158,11,0.1)] text-[#f59e0b];
-        }
-        .badge-blue {
-            @apply bg-[rgba(255,0,0,0.1)] text-[var(--accent-color)];
-        }
-    }
-    </style>
-</head>
-<body>
-    <script>const ChartJS = window.Chart;</script>
+  </head>
+  <body>
     <div id="root"></div>
-    <script type="text/babel" src="admin-components/AdminSidebar.js"></script>
-    <script type="text/babel" src="admin-components/AdminHeader.js"></script>
-    <script type="text/babel" src="admin-components/DashboardOverview.js"></script>
-    <script type="text/babel" src="admin-components/UsersManagement.js"></script>
-    <script type="text/babel" src="admin-components/RidesManagement.js"></script>
-    <script type="text/babel" src="admin-components/SupportManagement.js"></script>
-    <script type="text/babel" src="admin-components/PaymentsManagement.js"></script>
-    <script type="text/babel" src="admin-components/AnalyticsManagement.js"></script>
-    <script type="text/babel" src="admin-components/SettingsManagement.js"></script>
-    <script type="text/babel" src="admin-components/AdminHelpCenter.js"></script>
-    <script type="text/babel" src="utils/auth.js"></script>
-    <script type="text/babel" src="admin-app.js"></script>
-</body>
+    <script type="module">
+      import AdminApp from '/src/pages/admin.jsx'
+      import { createRoot } from 'react-dom/client'
+      const root = createRoot(document.getElementById('root'))
+      root.render(<AdminApp />)
+    </script>
+  </body>
 </html>
