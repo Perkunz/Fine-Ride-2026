@@ -112,3 +112,6 @@ export default function LandingApp() {
     </div>
   )
 }
+
+// Named exports so other pages can reuse the same header/footer during migration
+export { LandingNav, Footer, ErrorBoundary }
