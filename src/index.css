@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Project theme overrides (kept from index.html) */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #121212;
+  --accent-color: #ff0000;
+  --bg-color: #030303;
+  --text-main: #ffffff;
+  --text-muted: #aaaaaa;
+  --border-color: #2a2a2a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+/* keep a small helper so class names used in legacy files still work */
+.bg-white { background-color: var(--secondary-color) !important; }
